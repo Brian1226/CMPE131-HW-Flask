@@ -9,10 +9,13 @@ class User(db.Model):
     'message' = the text that users sent
     
     """
+    
     # id (int)
     id = db.Column(db.Integer, primary_key = True)
+    
     # author (string, unique, can't be null)
     author = db.Column(db.String, unique = True, nullable = False)
+    
     # message (linkd to Messages table)
     message = db.relationship('Message', backref 'author', lazy = 'dynamic')
 
@@ -20,6 +23,7 @@ class User(db.Model):
     # ex. User : Brian
     def __repr__(self):
         return f'<User {self.author}>'
+        
         
 class Messages(db.Model):
     """
