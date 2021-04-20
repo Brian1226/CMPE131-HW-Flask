@@ -10,13 +10,17 @@ from app.models import User, Messages
 def home():
     form=MessageForm()
     if form.validate_on_submit():
-        # check if user exits in database
-        # if not create user and add to database
-        # create row in Message table with user (created/found) add to ta database
-        user = User.query.filter_by(username = form.username.data).first()
+        # check if user exists in database
+        # if not, create user and add to database
+        user = User.query.filter_by(author = form.author.data).first()
 
         if user is None:
-            create_user = User(username = form.author.data)
+            create_user = User(author = form.author.data)
+            db.session.add(create_user)
+            db.session.commit()
+        
+        # create row in Message table with user (created/found) add to the database
+        
 
 
 
