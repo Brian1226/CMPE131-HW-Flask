@@ -6,10 +6,9 @@ class MessageForm(FlaskForm):
     """
     A form that include fields for:
 
-    'author' (String) = enter the name of the person writing the message
-    'message' (String) = enter the desired text
-    submit (button) = a submit button that says 'Send'
-
+    'Author' (String) = enter the user's name that's writing the message
+    'Message' (String) = enter the user's desired text
+    Submit (button) = a submit button that says 'Send', which will send the message if clicked
     """
 
     # author (string) validator should make this textbox required
