@@ -22,7 +22,7 @@ class User(db.Model):
     # outputs "User : " and the string for author right after
     # ex. User : Brian
     def __repr__(self):
-        return '<User {}>'.format{self.author}
+        return '<User {}>'.format(self.author)
 
 
 class Messages(db.Model):
