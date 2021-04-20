@@ -7,7 +7,6 @@ class User(db.Model):
     id (int) = user's unique identification
     'author' (String) = unique name that lets other users determine who sent the messages
     'message' = the text that users sent
-
     """
 
     # id (int)
@@ -16,7 +15,7 @@ class User(db.Model):
     # author (string, unique, can't be null)
     author = db.Column(db.String, unique = True, nullable = False)
 
-    # message (linkd to Messages table)
+    # message (link to Messages table)
     message = db.relationship('Message', backref = 'author', lazy = 'dynamic')
 
     # outputs "User : " and the string for author right after
