@@ -16,12 +16,12 @@ class User(db.Model):
     author = db.Column(db.String, unique = True, nullable = False)
 
     # message (link to Messages table)
-    message = db.relationship('Message', backref = 'author', lazy = 'dynamic')
+    message = db.relationship('Messages', backref = 'author', lazy = 'dynamic')
 
-    # outputs "User : " and the string for author right after
-    # ex. User : Brian
+    # outputs <User: AUTHOR_GOES_HERE>
+    # ex. <User : Brian>
     def __repr__(self):
-        return '<User {}>'.format(self.author)
+        return '<User: {}>'.format(self.author)
 
 
 class Messages(db.Model):
@@ -45,6 +45,6 @@ class Messages(db.Model):
     # write __repr__ that outputs
     # <Message: MESSAGE_GOES_HERE>
     # replace MESSAGE_GOES_HERE with the message
-    # ex. Message : Hello, guys!
+    # ex. <Message : Hello, guys!>
     def __repr__(self):
-        return '<Message {}>'.format(self.message)
+        return '<Message: {}>'.format(self.message)
