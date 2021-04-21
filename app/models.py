@@ -26,7 +26,7 @@ class User(db.Model):
 
 class Messages(db.Model):
     """
-    Holds data for all messages:
+    Holds data for messages:
 
     id (int) = the message's unique identification
     'message' (String) = the text that users sent
